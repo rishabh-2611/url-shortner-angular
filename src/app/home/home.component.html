@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="text-center mt-5">
+    <h1 class="text-big">World's fastest URL shortner</h1>
+    <h3>Shorten any of your URL for free</h3>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-6 offset-md-3">
+      <form ngNativeValidate class="form" #form (ngSubmit)="form.checkValidity()? onSubmit() : null">
+        <div class="row">
+          <div class="col-md-8">
+            <input type="url" class="form-control pt-2 pb-2 long-url-input" name="link.longUrl"
+              [(ngModel)]="link.longUrl" required autocomplete="off" placeholder="Shorten your link..">
+          </div>
+          <div class="col-md-4">
+            <button type="submit" class="form-control btn pt-2 pb-2 shorten-button"><b>Shorten</b></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row mt-5" *ngIf="isUrlShortened == true">
+    <div class="col-md-6 offset-md-3">
+            <h3>Shortened URL</h3>
+        <div class="row">
+          <div class="col-md-8">
+            <input type="url" class="form-control pt-2 pb-2 short-url-input" name="link.shortUrl"
+              [(ngModel)]="link.shortUrl" required autocomplete="off">
+          </div>
+          <div class="col-md-4">
+            <button type="button" class="form-control btn pt-2 pb-2 copy-button"><i class="fas fa-copy"> </i> <b> Copy</b></button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

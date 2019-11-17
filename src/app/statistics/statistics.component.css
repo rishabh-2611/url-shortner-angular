@@ -1,0 +1,10 @@
+.short-url-input {
+  height: 75px;
+}
+
+.statistics-button {
+  height: 75px;
+  font-size: 26px;
+  background-color: #512F89;
+  color: #fff;
+}
