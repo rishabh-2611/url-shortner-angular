@@ -5,10 +5,10 @@ import { AppComponent } from './app.component';
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
+import { ChartsModule } from "ng2-charts";
 
 // Bootstrap
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
 
 // Components
 import { HomeComponent } from './home/home.component';
@@ -32,7 +32,8 @@ import { CommonService } from "./common.service";
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [
     {

@@ -12,13 +12,17 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: ":shortUrl",
+    component: HomeComponent
+  },
+  {
     path: "statistics",
     component: StatisticsComponent
   },
-  {
-    path: ":stats",
-    component: StatsComponent
-  },
+  // {
+  //   path: ":stats",
+  //   component: StatsComponent
+  // },
   {
     path: ":shortUrl/stats",
     component: StatsComponent

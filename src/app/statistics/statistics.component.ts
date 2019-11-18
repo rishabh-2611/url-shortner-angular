@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector} from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-statistics',
@@ -6,13 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent implements OnInit {
-
+  router: Router;
   shortUrl: "";
+
+  constructor(private injector: Injector){
+    this.router = this.injector.get(Router);
+  }
 
   ngOnInit() {
   }
 
   onSubmit(){
-    console.log(this.shortUrl);
+    // this.router.navigate[this.shortUrl+"/stats"]
+    // console.log(this.shortUrl);
   }
 }

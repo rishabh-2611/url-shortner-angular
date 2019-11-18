@@ -29,4 +29,24 @@ export class CommonService {
     );
   }
 
+  getLongUrl(shortUrl): Observable<any> {
+    return this.http.post(
+      this.baseUrl+"/getLongUrl",
+      JSON.stringify({
+        shortUrl : shortUrl
+      }),
+      this.httpOptions
+    );
+  }
+
+  getStats(shortUrl): Observable<any> {
+    return this.http.post(
+      this.baseUrl+"/getStats",
+      JSON.stringify({
+        shortUrl : shortUrl
+      }),
+      this.httpOptions
+    );
+  }
+
 }

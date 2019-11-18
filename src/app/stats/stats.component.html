@@ -1,1 +1,63 @@
-<p>stats works!</p>
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="text-center mt-5">
+    <h3>Statistics</h3>
+  </div>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-header">
+            Short URL
+          </div>
+          <div class="card-body">
+            {{shortUrl}}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-header">
+            Long URL
+          </div>
+          <div class="card-body">
+            {{longUrl}}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-header">
+            Visited
+          </div>
+          <div class="card-body">
+            {{visitCount}} times
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card shadow-sm">
+          <div class="card-header">
+            Line Graph
+          </div>
+          <div class="card-body">
+            <div class="flex">
+              <div class="flex-item">
+                <div style="display: block;">
+                  <canvas baseChart width="1050" height="400" [datasets]="lineChartData" [labels]="lineChartLabels"
+                    [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                    [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
